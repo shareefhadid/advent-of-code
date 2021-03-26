@@ -4,7 +4,7 @@ const input = fs.readFileSync('./input.txt','utf-8')
 // Turn input into an array of numbers
 let inputArray = input.split("\n").map((string) => Number(string))
 
-// Declare function to solve for entries that sum to target value and returns their product
+// Accepts Array of numbers and targetSum of any two values in the array. Returns the multiple of the two values.
 function sumMultiplier(array, targetSum) {
   // initialize variable to avoid mutating original
   let arr = array

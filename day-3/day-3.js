@@ -7,7 +7,7 @@ let inputOneD = input.replace(/[\n\r]/ig, "")
 // Store length of row
 let rowLength = input.replace(/\r/ig, "").split("\n")[0].length
 
-// moveRight helper. Moving right can increase or decrease your position, depending on where you end up.
+// moveRight helper. Moving right can increase or decrease your position, depending on where you end up. Returns number to shift position.
 function moveRight(rowPosition, moves) {
   const sum = rowPosition + moves
   if (sum > rowLength) {
@@ -17,12 +17,12 @@ function moveRight(rowPosition, moves) {
   } else return moves
 }
 
-// moveDown helper. Moving down in 1-D just means increasing position by rowLength * number of moves
+// moveDown helper. Moving down in 1-D just means increasing position by rowLength * number of moves. Returns number to shift position.
 function moveDown(moves) {
   return (rowLength * moves)
 }
 
-// Primary function that returns how many trees you encountered while traversing
+// Primary function that returns number of trees you encountered while traversing.
 function treeCounter(string, right, down) {
   let rowPosition = 1;
   let position = 1;

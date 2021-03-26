@@ -12,6 +12,7 @@ let inputArray = input.split("\n").map(function (string) {
   }
 })
 
+// Accepts array of passwords, returns number of valid passwords.
 function countValidPasswords(arrayOfPasswords) {
   let validCount = 0
   arrayOfPasswords.forEach(function ({ firstIndex, secondIndex, letter, password }) {

@@ -7,7 +7,7 @@ let inputArray = input.replace(/\r/ig, "").split("\n\n").map(val => val.replace(
 // initialize required fields
 let required = ["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"]
 
-// Validates if array of passport contains all of the require fields
+// Validates if array of passport contains all of the require fields. Returns number of valid passports.
 function passportValidator(arrayOfPassports, arrayRequired) {
   let counter = 0
   arrayOfPassports.forEach(passport => {
