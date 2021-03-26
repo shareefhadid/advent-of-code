@@ -11,3 +11,18 @@ let inputArray = input.split("\n").map(function (string) {
     password: substr[4],
   }
 })
+
+function countValidPasswords(arrayOfPasswords) {
+  let validCount = 0
+  arrayOfPasswords.forEach(function ({ min, max, letter, password }) {
+    // create regexp to match password with
+    const re = new RegExp(letter, 'g')
+    // count number of occurences in password
+    const count = (password.match(re) || []).length
+    // Check that password is valid
+    if (count >= min && count <= max) validCount++
+  })
+  return validCount
+}
+
+console.log(countValidPasswords(inputArray))
