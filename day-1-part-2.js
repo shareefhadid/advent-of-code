@@ -216,7 +216,7 @@ function sumMultiplier(array, targetSum) {
     while (startIndex < endIndex) {
       const sum = arr[startIndex] + arr[endIndex] + value
       if (sum === targetSum) {
-        return (arr[startIndex] * arr[endIndex])
+        return (arr[startIndex] * arr[endIndex] * value)
       } else if (sum > targetSum) {
         endIndex--
       } else {
