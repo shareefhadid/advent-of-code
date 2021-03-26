@@ -210,16 +210,18 @@ function sumMultiplier(array, targetSum) {
   // sort in ascending order
   arr.sort((a, b) => a - b)
   // Initialize start and end index
-  let startIndex = 0, endIndex = arr.length - 1
   // Loop through array until target sum is found or all values are evaluated
-  while (startIndex < endIndex) {
-    const sum = arr[startIndex] + arr[endIndex]
-    if (sum === targetSum) {
-      return (arr[startIndex] * arr[endIndex])
-    } else if (sum > targetSum) {
-      endIndex--
-    } else {
-      startIndex++
+  for (const value of arr) {
+    let startIndex = 0, endIndex = arr.length - 1
+    while (startIndex < endIndex) {
+      const sum = arr[startIndex] + arr[endIndex] + value
+      if (sum === targetSum) {
+        return (arr[startIndex] * arr[endIndex])
+      } else if (sum > targetSum) {
+        endIndex--
+      } else {
+        startIndex++
+      }
     }
   }
 }
