@@ -1,5 +1,4 @@
-// Store input as a string
-const input = `1695
+1695
 1157
 1484
 1717
@@ -198,30 +197,4 @@ const input = `1695
 1999
 1405
 1784
-1196`
-
-// Turn input into an array of numbers
-let inputArray = input.split("\n").map((string) => Number(string))
-
-// Declare function to solve for entries that sum to target value and returns their product
-function sumMultiplier(array, targetSum) {
-  // initialize variable to avoid mutating original
-  let arr = array
-  // sort in ascending order
-  arr.sort((a, b) => a - b)
-  // Initialize start and end index
-  let startIndex = 0, endIndex = arr.length - 1
-  // Loop through array until target sum is found or all values are evaluated
-  while (startIndex < endIndex) {
-    const sum = arr[startIndex] + arr[endIndex]
-    if (sum === targetSum) {
-      return (arr[startIndex] * arr[endIndex])
-    } else if (sum > targetSum) {
-      endIndex--
-    } else {
-      startIndex++
-    }
-  }
-}
-
-console.log(sumMultiplier(inputArray, 2020))
+1196
