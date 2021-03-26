@@ -65,10 +65,18 @@ function validateHcl(passportArray) {
   })
 }
 
-function validateHcl(passportArray) {
-  return passportArray.filter(function ({ hcl }) {
-    if (!hcl || hcl[0] !== "#" || hcl.length !== 7) return
-    return /^[a-z0-9]+$/.test(hcl.slice(1))
+function validateEcl(passportArray) {
+  return passportArray.filter(function ({ ecl }) {
+    if (!ecl) return
+    const validVals = ['amb', 'blu', 'brn', 'gry', 'grn', 'hzl', 'oth']
+    return validVals.includes(ecl)
+  })
+}
+
+function validatePid(passportArray) {
+  return passportArray.filter(function ({ pid }) {
+    if (!pid) return
+    return pid.length === 9
   })
 }
 
@@ -82,3 +90,7 @@ passportArray = validateHgt(passportArray)
 console.log(`validated hgt, number of passports remaining: ${passportArray.length}`)
 passportArray = validateHcl(passportArray)
 console.log(`validated hcl, number of passports remaining: ${passportArray.length}`)
+passportArray = validateEcl(passportArray)
+console.log(`validated ecl, number of passports remaining: ${passportArray.length}`)
+passportArray = validatePid(passportArray)
+console.log(`validated pid, number of passports remaining: ${passportArray.length}`)
